@@ -50,7 +50,7 @@ func NewRouter(config *Config) *gin.Engine {
 	public.Handle(http.MethodGet, "/_health", hc.GetHealth)
 
 	public.Handle(http.MethodPost, "/scan", hc.ScanLibraries)
-	public.Handle(http.MethodPost, "/command", hc.Command)
+	public.Handle(http.MethodPost, "/command", hc.HandleCommand)
 
 	return router
 }

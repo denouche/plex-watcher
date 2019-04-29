@@ -25,6 +25,7 @@ func (hc *handlersContext) ScanLibraries(c *gin.Context) {
 		recentlyAdded, err := hc.plex.GetRecentlyAdded(lib)
 		if err != nil {
 			utils.GetLoggerFromCtx(c).WithError(err).Error("error while getting recently added")
+			continue
 		}
 
 		if len(recentlyAdded.MediaContainer.Metadata) > 0 {
